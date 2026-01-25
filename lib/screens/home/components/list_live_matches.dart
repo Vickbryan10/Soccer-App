@@ -9,7 +9,7 @@ class LiveMatchesList extends StatelessWidget {
   final Function onTap;
   final Function onViewAllTap;
   final List<SoccerMatch> liveMatches;
-  LiveMatchesList({Key key, this.liveMatches, this.onTap, this.onViewAllTap})
+  LiveMatchesList({Key? key, this.liveMatches, this.onTap, this.onViewAllTap})
       : super(key: key);
 
   @override

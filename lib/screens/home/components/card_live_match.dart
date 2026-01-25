@@ -6,7 +6,7 @@ import 'package:soccerapp/models/match.dart';
 class LiveMatchCard extends StatelessWidget {
   final SoccerMatch match;
   final int index;
-  const LiveMatchCard({Key key, this.index, this.match}) : super(key: key);
+  const LiveMatchCard({Key? key, this.index, this.match}) : super(key: key);
 
   static List<Color> cardColors = [
     BG_CARD_LIVE_1,

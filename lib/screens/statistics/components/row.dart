@@ -6,7 +6,7 @@ class StatisticRow extends StatelessWidget {
   final dynamic away;
   final String title;
   const StatisticRow({
-    Key key,
+    Key? key,
     this.home,
     this.away,
     this.title,

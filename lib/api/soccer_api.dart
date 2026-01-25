@@ -52,23 +52,34 @@ class SoccerApi {
     print("[SoccerApi] :: getting team statistics for team $teamId..");
     final url = Uri.parse(baseUrl +
         "fixtures/statistics?fixture=${fixtureId.toString()}&team=${teamId.toString()}");
-    Response res = await get(url, headers: headers).catchError((error) {
-      print(error);
-    });
+    
+    Response? res;
+    try {
+      res = await get(url, headers: headers);
+    } catch (error) {
+      print('[SoccerApi] Error getting team statistics: $error');
+      return [];
+    }
 
     List<Statistic> statistics = [];
 
-    if (res.statusCode == 200) {
+    if (res != null && res.statusCode == 200) {
       var body = jsonDecode(res.body);
       List<dynamic> response = body['response'];
 
-      for (Map<String, dynamic> stat in response.first['statistics']) {
-        // print("loop :: ${stat.toString()}");
-        try {
-          statistics.add(Statistic.fromJson(stat));
-        } catch (e) {
-          print(e);
+      if (response.isNotEmpty) {
+        final stats = response.first['statistics'];
+        if (stats != null) {
+          for (Map<String, dynamic> stat in stats) {
+            try {
+              statistics.add(Statistic.fromJson(stat));
+            } catch (e) {
+              print('Error parsing statistic: $e');
+            }
+          }
         }
+      } else {
+        print('[SoccerApi] No statistics response data available');
       }
       print("stats:: ${statistics.toList()}");
     }
@@ -79,13 +90,18 @@ class SoccerApi {
     print("[SoccerApi] :: getLeagueTeams: called");
     final url = Uri.parse(baseUrl + "teams?league=$leagueId&season=$season");
 
-    Response res = await get(url, headers: headers).catchError((error) {
-      print(error);
-    });
+    Response? res;
+    try {
+      res = await get(url, headers: headers);
+    } catch (error) {
+      print('[SoccerApi] Error getting league teams: $error');
+      return [];
+    }
+    
     print("url:: $url");
     List<TeamInfo> teams = [];
 
-    if (res.statusCode == 200) {
+    if (res != null && res.statusCode == 200) {
       var body = jsonDecode(res.body);
       List<dynamic> teamsList = body['response'];
       try {

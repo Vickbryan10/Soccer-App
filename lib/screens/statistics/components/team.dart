@@ -7,7 +7,7 @@ class TeamLogoName extends StatelessWidget {
   final Team team;
   final double width;
   final bool isHome;
-  const TeamLogoName({Key key, this.team, this.width, this.isHome})
+  const TeamLogoName({Key? key, this.team, this.width, this.isHome})
       : super(key: key);
 
   @override

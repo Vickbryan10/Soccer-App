@@ -9,7 +9,7 @@ import 'package:soccerapp/screens/statistics/components/team.dart';
 
 class MatchStatistics extends StatefulWidget {
   final SoccerMatch match;
-  const MatchStatistics({Key key, this.match}) : super(key: key);
+  const MatchStatistics({Key? key, this.match}) : super(key: key);
 
   @override
   _MatchStatisticsState createState() => _MatchStatisticsState();

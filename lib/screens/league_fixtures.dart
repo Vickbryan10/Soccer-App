@@ -10,14 +10,14 @@ import 'package:soccerapp/widgets/item_match_fixture.dart';
 class LeagueFixtures extends StatefulWidget {
   static const ROUTE_NAME = "LeagueFixtures";
   final League league;
-  const LeagueFixtures({Key key, @required this.league}) : super(key: key);
+  const LeagueFixtures({Key? key, required this.league}) : super(key: key);
 
   @override
   _LeagueFixturesState createState() => _LeagueFixturesState();
 }
 
 class _LeagueFixturesState extends State<LeagueFixtures> {
-  int season = 2020;
+  int season = 2025;
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,12 @@ class _LeagueFixturesState extends State<LeagueFixtures> {
                       );
                     }
 
-                    final List<SoccerMatch> leagueFixtures = snapshot.data;
+                    final List<SoccerMatch>? leagueFixtures = snapshot.data;
+                    if (leagueFixtures == null || leagueFixtures.isEmpty) {
+                      return Center(
+                        child: Text("No Fixtures for the current league !"),
+                      );
+                    }
                     return ListView.builder(
                       itemCount: leagueFixtures.length,
                       itemBuilder: (ctx, index) {

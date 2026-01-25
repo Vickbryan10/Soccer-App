@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Soccer App',
+      title: 'Vick Score',
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "ComicSans"),
       debugShowCheckedModeBanner: false,
       home: Home(),

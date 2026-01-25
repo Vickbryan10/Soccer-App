@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:soccerapp/constants.dart';
 
 class TransparentBackground extends StatelessWidget {
-  const TransparentBackground({Key key}) : super(key: key);
+  const TransparentBackground({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

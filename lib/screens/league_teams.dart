@@ -9,14 +9,14 @@ import 'package:soccerapp/widgets/item_team_info.dart';
 class LeagueTeams extends StatefulWidget {
   static const ROUTE_NAME = "LeagueTeams";
   final League league;
-  const LeagueTeams({Key key, @required this.league}) : super(key: key);
+  const LeagueTeams({Key? key, required this.league}) : super(key: key);
 
   @override
   _LeagueTeamsState createState() => _LeagueTeamsState();
 }
 
 class _LeagueTeamsState extends State<LeagueTeams> {
-  int season = 2020;
+  int season = 2025;
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,12 @@ class _LeagueTeamsState extends State<LeagueTeams> {
                       );
                     }
 
-                    final List<TeamInfo> teams = snapshot.data;
+                    final List<TeamInfo>? teams = snapshot.data;
+                    if (teams == null || teams.isEmpty) {
+                      return Center(
+                        child: Text("No Teams for the current league !"),
+                      );
+                    }
                     return ListView.builder(
                       itemCount: teams.length,
                       itemBuilder: (ctx, index) {

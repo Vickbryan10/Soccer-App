@@ -10,7 +10,7 @@ import 'package:soccerapp/screens/home/components/home_top.dart';
 import 'package:soccerapp/screens/home/components/list_live_matches.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                   height: 50,
                   child: Center(
                     child: Text(
-                      "Soccer App",
+                      "Vick Score",
                       style: TextStyle(
                         color: COLOR_PRIMARY,
                         fontSize: fontSizexLarge,
@@ -68,9 +68,9 @@ class Home extends StatelessWidget {
                         );
                       }
 
-                      final List<SoccerMatch> liveMatches = snapshot.data;
+                      final List<SoccerMatch>? liveMatches = snapshot.data;
                       return LiveMatchesList(
-                        liveMatches: liveMatches,
+                        liveMatches: liveMatches ?? [],
                       );
                     },
                   ),

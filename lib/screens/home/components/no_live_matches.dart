@@ -3,7 +3,7 @@ import 'package:soccerapp/constants.dart';
 
 class NoLiveMatches extends StatelessWidget {
   final double height;
-  const NoLiveMatches({Key key, this.height}) : super(key: key);
+  const NoLiveMatches({Key? key, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

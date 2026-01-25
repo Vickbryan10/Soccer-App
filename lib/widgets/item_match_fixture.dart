@@ -8,7 +8,7 @@ class MatchFixtureItem extends StatelessWidget {
   final SoccerMatch match;
   final ValueSetter<SoccerMatch> onFixtureTap;
   const MatchFixtureItem(
-      {Key key, this.match, this.leagueId, this.onFixtureTap})
+      {Key? key, this.match, this.leagueId, this.onFixtureTap})
       : super(key: key);
 
   static const List<Color> colors = [

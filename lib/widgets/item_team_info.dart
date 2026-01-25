@@ -5,7 +5,7 @@ import 'package:soccerapp/models/team_info.dart';
 
 class TeamInfoItem extends StatelessWidget {
   final TeamInfo teamInfo;
-  const TeamInfoItem({Key key, this.teamInfo}) : super(key: key);
+  const TeamInfoItem({Key? key, this.teamInfo}) : super(key: key);
 
   Widget _info(IconData icon, String text) {
     return Container(

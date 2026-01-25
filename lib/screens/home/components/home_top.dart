@@ -6,7 +6,7 @@ class HomeTop extends StatelessWidget {
   final double height;
   final Function onViewAllTap;
   final ValueSetter<League> onLeagueTap;
-  const HomeTop({Key key, this.height, this.onViewAllTap, this.onLeagueTap})
+  const HomeTop({Key? key, this.height, this.onViewAllTap, this.onLeagueTap})
       : super(key: key);
 
   @override

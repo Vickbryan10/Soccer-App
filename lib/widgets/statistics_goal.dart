@@ -7,7 +7,7 @@ class GoalStat extends StatelessWidget {
   final int away;
   final int elapsed;
 
-  const GoalStat({Key key, this.home = 0, this.away = 0, this.elapsed = 0})
+  const GoalStat({Key? key, this.home = 0, this.away = 0, this.elapsed = 0})
       : super(key: key);
 
   @override

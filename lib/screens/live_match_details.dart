@@ -7,7 +7,7 @@ import 'package:soccerapp/widgets/item_live_detail.dart';
 
 class LiveMatchDetails extends StatefulWidget {
   final SoccerMatch match;
-  const LiveMatchDetails({Key key, this.match}) : super(key: key);
+  const LiveMatchDetails({Key? key, this.match}) : super(key: key);
 
   @override
   _LiveMatchDetailsState createState() => _LiveMatchDetailsState();

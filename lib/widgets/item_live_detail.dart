@@ -8,9 +8,9 @@ class LiveDetailItem extends StatelessWidget {
   final String subTitle;
   final String subTitle2;
   const LiveDetailItem(
-      {Key key,
+      {Key? key,
       this.image,
-      @required this.title,
+      required this.title,
       this.subTitle = "",
       this.subTitle2 = ""})
       : super(key: key);
